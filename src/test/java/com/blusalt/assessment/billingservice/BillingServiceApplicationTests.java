@@ -48,7 +48,7 @@ class BillingServiceApplicationTests {
 
 		CustomerFund fund = new CustomerFund().withAmount("100").withCustomerId(1);
 		MvcResult result = this.mockMvc.perform(post(getUri("/api/v1/billing/customer/fund"))
-				.characterEncoding("utf-8")
+
 				.content(new ObjectMapper().writeValueAsString(fund))
 				.contentType(MediaType.APPLICATION_JSON))
 				.andDo(print())
